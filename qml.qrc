@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>GuiButton.qml</file>
+        <file>GuiCircularBtn.qml</file>
+        <file>GuiText.qml</file>
+        <file>main.qml</file>
+        <file>OperatorPrompt.qml</file>
+        <file>FrontPanelInfo.qml</file>
+    </qresource>
+</RCC>
