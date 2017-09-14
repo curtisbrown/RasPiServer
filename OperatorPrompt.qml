@@ -14,13 +14,13 @@ Rectangle {
         signal no
 
         anchors.centerIn: parent
-        width: parent.width
+        width: promptWindow.width
         spacing: 100
 
         GuiText {
             id: txt
             anchors.horizontalCenter: parent.horizontalCenter
-            width: root.width
+            width: parent.width
 
             font.bold: true
             font.pointSize: 60
