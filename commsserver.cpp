@@ -12,7 +12,7 @@ CommsServer::CommsServer(QObject *parent) :
 
     connect(this, &CommsServer::promptAnswerChanged, this, &CommsServer::sendPromptAnswer);
 
-    m_serialClient.configureSerial("/dev/ttyUSB0", QSerialPort::Baud115200, QSerialPort::Data8,
+    m_serialClient.configureSerial("/dev/ttyAMA0", QSerialPort::Baud115200, QSerialPort::Data8,
                                    QSerialPort::NoParity, QSerialPort::OneStop,
                                    QSerialPort::NoFlowControl);
     m_serialClient.openSerialPort();
@@ -83,6 +83,10 @@ void CommsServer::ProcessData()
                 qDebug() << "Recieved \"Operator Info Stop\"";
                 m_serialClient.setRecieveFrontPanelString(false);
                 emit stopFrontPanelInfo();
+                break;
+            default:
+                qDebug() << "CMD NOT recognised!!!";
+                m_serialClient.clearDataBuffer();
                 break;
             }
         }
