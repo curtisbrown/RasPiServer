@@ -18,6 +18,12 @@ SOURCES += main.cpp \
     tsplay.cpp \
     hddrecording.cpp
 
+HEADERS += \
+    commsserver.h \
+    serialclient.h \
+    tsplay.h \
+    hddrecording.h
+
 RESOURCES += qml.qrc \
     images.qrc
 
@@ -28,12 +34,5 @@ QML_IMPORT_PATH =
 QML_DESIGNER_IMPORT_PATH =
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    commsserver.h \
-    serialclient.h \
-    tsplay.h \
-    hddrecording.h
+target.path = /home/root
+INSTALLS += target
