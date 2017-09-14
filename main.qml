@@ -1,8 +1,9 @@
 import QtQuick 2.6
+import QtQuick.Controls 1.4
 import QtQuick.Window 2.2
 import com.ctdi.RasPiServer.CommsServer 1.0
 
-Window {
+ApplicationWindow {
     id: root
     visible: true
     width: 1920
@@ -10,8 +11,6 @@ Window {
     flags: Qt.FramelessWindowHint
 
     CommsServer { id: commServer }
-    OperatorPrompt { id: operatorPrompt }
-    FrontPanelInfo { id: frontPanel }
 
     // Background
     Rectangle {
@@ -37,5 +36,18 @@ Window {
             frontPanel.visible = true;
         }
         onStopFrontPanelInfo: frontPanel.visible = false;
+    }
+
+
+    /******PANELS******/
+    OperatorPrompt {
+        id: operatorPrompt
+        anchors.fill: parent
+        visible: false
+    }
+    FrontPanelInfo {
+        id: frontPanel
+        anchors.fill: parent
+        visible: false
     }
 }
