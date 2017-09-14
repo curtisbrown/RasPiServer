@@ -23,7 +23,7 @@ Rectangle {
             width: root.width
 
             font.bold: true
-            font.pointSize: 40
+            font.pointSize: 60
 
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
