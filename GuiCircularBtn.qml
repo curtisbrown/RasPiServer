@@ -3,10 +3,10 @@ import QtQuick 2.3
 GuiButton {
     id: root
     width: height
-    radius: width * 0.5
+    radius: width
     text: ""
     txtColor: "white"
-    border.width: 2
+    border.width: 5
 
     implicitWidth: implicitHeight
 
