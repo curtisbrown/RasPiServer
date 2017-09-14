@@ -2,12 +2,9 @@ import QtQuick 2.6
 import QtQuick.Window 2.2
 import com.ctdi.RasPiServer.CommsServer 1.0
 
-Window {
+Rectangle {
     id: frontPanelInfo
     visible: false
-    width: 1920
-    height: 1080
-    flags: Qt.FramelessWindowHint
     color: "#14148c"
     property alias instruction: txt.text
 
