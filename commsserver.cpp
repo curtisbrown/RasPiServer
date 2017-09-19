@@ -40,6 +40,7 @@ void CommsServer::ProcessData()
         m_serialClient.removeBytesFromReadBuffer("#");
 
         if (m_serialClient.recievePromptString()) {
+            m_serialClient.setRecievePromptString(false);
             setPromptQuestion(dataString);
             emit displayOperatorPrompt();
         } else if (m_serialClient.recieveFrontPanelString()) {
