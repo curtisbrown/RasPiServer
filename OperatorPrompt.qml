@@ -51,4 +51,9 @@ Rectangle {
             promptWindow.visible = false;
         }
     }
+
+    Connections {
+        target: commServer
+        onStopGuiPrompt: promptWindow.visible = false;
+    }
 }

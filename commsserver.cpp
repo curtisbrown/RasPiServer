@@ -85,6 +85,11 @@ void CommsServer::ProcessData()
                 m_serialClient.setRecieveFrontPanelString(false);
                 emit stopFrontPanelInfo();
                 break;
+            case SerialClient::CMD_STOP_GUI_DISPLAY:
+                qDebug() << "Recieved \"Stop GUI Display\"";
+                emit stopGuiPrompt();
+                m_serialClient.writeData("-1");
+                break;
             default:
                 qDebug() << "CMD NOT recognised!!!";
                 m_serialClient.clearDataBuffer();
