@@ -23,6 +23,7 @@ signals:
     void promptAnswerChanged();
     void displayFrontPanelInfo();
     void stopFrontPanelInfo();
+    void stopGuiPrompt();
 
 public slots:
     void ProcessData();
