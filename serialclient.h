@@ -18,7 +18,8 @@ public:
         CMD_HDD_RECORDING,
         CMD_OPERATOR_PROMPT,
         CMD_OPERATOR_INFO_START,
-        CMD_OPERATOR_INFO_STOP
+        CMD_OPERATOR_INFO_STOP,
+        CMD_STOP_GUI_DISPLAY
     } PiCommand;
 
     QByteArray data();
