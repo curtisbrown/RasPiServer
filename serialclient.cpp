@@ -90,6 +90,16 @@ void SerialClient::clearDataBuffer()
     m_data.clear();
 }
 
+bool SerialClient::recieveInfoDialogString() const
+{
+    return m_recieveInfoDialogString;
+}
+
+void SerialClient::setRecieveInfoDialogString(bool recieveInfoDialogString)
+{
+    m_recieveInfoDialogString = recieveInfoDialogString;
+}
+
 bool SerialClient::recieveFrontPanelString() const
 {
     return m_recieveFrontPanelString;

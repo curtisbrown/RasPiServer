@@ -47,6 +47,10 @@ void CommsServer::ProcessData()
             m_serialClient.setRecieveFrontPanelString(false);
             setFrontPanelInfo(dataString);
             emit displayFrontPanelInfo();
+        } else if (m_serialClient.recieveInfoDialogString()) {
+            m_serialClient.setRecieveInfoDialogString(false);
+            setPromptQuestion(dataString);
+            emit displayInfoDialog();
         } else {
             SerialClient::PiCommand cmd = (SerialClient::PiCommand) dataString.toInt();
             qDebug() << "CMD to process:" << cmd;
@@ -90,6 +94,10 @@ void CommsServer::ProcessData()
                 emit stopGuiPrompt();
                 m_serialClient.writeData("-1");
                 break;
+            case SerialClient::CMD_OPERATOR_INFO_DIALOG:
+                qDebug() << "Recieved \"Info Dialog\"";
+                m_serialClient.setRecieveInfoDialogString(true);
+                break;
             default:
                 qDebug() << "CMD NOT recognised!!!";
                 m_serialClient.clearDataBuffer();
@@ -118,6 +126,13 @@ void CommsServer::sendPromptAnswer()
 
     qDebug() << "Sending prompt response: " << QString("%1").arg(m_promptAnswer == 1 ? "YES" : "NO");
     QByteArray ba = QString::number(m_promptAnswer).toLatin1();
+    m_serialClient.writeData(ba);
+}
+
+void CommsServer::sendInfoDialogAnswer()
+{
+    qDebug() << "Sending Info Dialog response: " << QString("1");
+    QByteArray ba = QString::number(1).toLatin1();
     m_serialClient.writeData(ba);
 }
 

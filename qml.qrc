@@ -6,5 +6,6 @@
         <file>main.qml</file>
         <file>OperatorPrompt.qml</file>
         <file>FrontPanelInfo.qml</file>
+        <file>InfoDialog.qml</file>
     </qresource>
 </RCC>

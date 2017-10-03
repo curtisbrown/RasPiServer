@@ -24,6 +24,7 @@ signals:
     void displayFrontPanelInfo();
     void stopFrontPanelInfo();
     void stopGuiPrompt();
+    void displayInfoDialog();
 
 public slots:
     void ProcessData();
@@ -34,6 +35,7 @@ public slots:
     int promptAnswer() const;
     void setPromptAnswer(int promptAnswer);
     void sendPromptAnswer();
+    void sendInfoDialogAnswer();
 
     QString frontPanelInfo() const;
     void setFrontPanelInfo(const QString &frontPanelInfo);

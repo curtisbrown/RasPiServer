@@ -19,7 +19,8 @@ public:
         CMD_OPERATOR_PROMPT,
         CMD_OPERATOR_INFO_START,
         CMD_OPERATOR_INFO_STOP,
-        CMD_STOP_GUI_DISPLAY
+        CMD_STOP_GUI_DISPLAY,
+        CMD_OPERATOR_INFO_DIALOG
     } PiCommand;
 
     QByteArray data();
@@ -29,6 +30,9 @@ public:
 
     bool recieveFrontPanelString() const;
     void setRecieveFrontPanelString(bool recieveFrontPanelString);
+
+    bool recieveInfoDialogString() const;
+    void setRecieveInfoDialogString(bool recieveInfoDialogString);
 
 signals:
     void dataAvailable();
@@ -50,6 +54,7 @@ private:
     QByteArray m_data;
     bool m_recievePromptString;
     bool m_recieveFrontPanelString;
+    bool m_recieveInfoDialogString;
 };
 
 #endif // SERIALCLIENT_H
